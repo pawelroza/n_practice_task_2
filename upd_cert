@@ -1,0 +1,15 @@
+Создание новой роли ansible-galaxy init upd_cert
+
+Открыть файл с тасками роли и добавить таски создания директории и копирования в нее сертификатов
+
+В upd_cert/handlers/main.yml добавить таски перезагрузки apache httpd.
+
+Создаем файл плейбука
+---
+- hosts: group
+  user: user
+  become: true
+  become_method: su
+  become_user: root
+  roles:
+    - upd_cert
